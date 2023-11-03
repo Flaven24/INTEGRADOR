@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="./winListado"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window id="winListado" title="Listado Productos" width="1050px" border="normal" 
+            closable="true" apply="pe.integrador.modulos.listado.ListadoProductos">
+        <grid>
+            <columns>
+                <column width="25%" />
+                <column width="25%" />
+                <column width="25%" />
+                <column width="25%" />
+            </columns>
+
+            <rows >
+                <row spans="1,3">
+                    <label value="Producto:"/>
+                    <textbox id="txtNombre" width="98%"/>
+                </row>
+            </rows>
+        </grid>
+        <groupbox >
+            <listbox id="lstProductos" width="" height="" onSelect="" mold="paging" pageSize="15">
+                <listhead>
+                    <listheader label="Codigo" width="10%"/>
+                    <listheader label="Nombre" width="40%"/>
+                    <listheader label="Activo" width="10%"/>
+                    <listheader label="Stock" width="10%"/>
+                    <listheader label="Costo Promedio" width="15%"/>
+                    <listheader label="Ultimo Costo" width="15%"/>
+                </listhead>
+                <listitem self="@{each=item}">
+                    <listcell label="@{item.idproducto}"/>
+                    <listcell label="@{item.cnombre}"/>
+                    <listcell>
+                        <checkbox checked="@{item.bactivo}" disabled="true" />
+                    </listcell>
+                    <listcell label="@{item.nstock}"/>
+                    <listcell label="@{item.ncosuni}"/>
+                    <listcell label="@{item.nultcos}"/>
+                </listitem>
+						
+            </listbox>
+        </groupbox>
+        <toolbar id="tb" align="end" >
+            <toolbarbutton id="btnBuscar" image="/img/32/buscar.png" label="Buscar"   />
+            <toolbarbutton id="btnImprimir" image="/img/32/pdf.png" label="Imprimir" />
+            <toolbarbutton id="btnSalir" image="/img/32/salir.png" label="Salir" onClick="winListado.onClose()"  />
+        </toolbar>
+    </window>
+</zk>

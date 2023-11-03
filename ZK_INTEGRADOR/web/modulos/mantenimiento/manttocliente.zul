@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window id="winCliente" title="Mantenimiento Cliente" width="1000px" border="normal" 
+            closable="true" apply="pe.integrador.modulos.mantenimiento.ManttoCliente">
+        <grid>
+            <columns>
+                <column width="25%" />
+                <column width="25%" />
+                <column width="25%" />
+                <column width="25%" />
+            </columns>
+            <rows>
+                <row >
+                    Codigo:
+                    <textbox id="txtCodigo"/>
+                    Nombre:
+                    <textbox id="txtNombre" width="90%" />
+                    
+                </row>
+                <row >
+                    Apellido:
+                    <textbox id="txtApellido" width="90%"/>
+                    DNI:
+                    <textbox xmlns:w="client" id="txtDni" width="90%" maxlength="8">
+                        <attribute w:name="doKeyPress_">
+			<![CDATA[
+				function(evt)
+				{
+                                    if (!this._shallIgnore(evt, "0123456789"))
+                                            this.$doKeyPress_(evt);
+			        }
+			]]>
+                        </attribute>
+                    </textbox>
+                </row>
+                <row>
+                    Estado:
+                    <combobox id="cboEstado" readonly="true" width="98%" />
+                    
+                    <checkbox id="bActivo" label="Activo" />
+                </row>
+            </rows>
+        </grid>
+        <toolbar id="tb" align="end" >
+            <toolbarbutton id="btnRegistrar" image="/img/32/registrar.png" label="Registrar" />
+            <toolbarbutton id="btnActualizar" image="/img/32/actualizar.png" label="Actualizar" visible="false" />
+            <toolbarbutton id="btnEliminar" image="/img/32/eliminar.png" label="Eliminar" visible="false" />
+            <toolbarbutton id="btnSalir" image="/img/32/salir.png" label="Salir" onClick="winCliente.onClose()"  />
+        </toolbar>
+    </window>
+</zk>

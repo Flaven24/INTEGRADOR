@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window id="win" title="Listado Compras" width="1000px" border="normal" closable="true" >
+        <grid>
+            <columns>
+                <column width="25%" />
+                <column width="25%" />
+                <column width="25%" />
+                <column width="25%" />
+            </columns>
+            <rows>
+                <row>
+                    Desde:
+                    <datebox id="dDesde" readonly="true" width="90%"/>
+                    Hasta:
+                    <datebox id="dHasta" readonly="true" width="90%" />
+                    <button id="btnProcesar" label="Procesar"/>
+                </row>
+            </rows>
+        </grid>
+        <groupbox >
+            <listbox id="lstCompras" width="" height="" onSelect="">
+                <listhead>
+                    <listheader label="Proveedor"/>
+                    <listheader label="Factura"/>
+                    <listheader label="Subtotal"/>
+                    <listheader label="IGV"/>
+                    <listheader label="Importe"/>
+                    <listheader label="Detalle"/>
+                </listhead>
+                <listitem>
+                    <listcell label=""/>
+                    <listcell label=""/>
+                    <listcell label=""/>
+                    <listcell label=""/>
+                    <listcell label=""/>
+                    <listcell>
+                        <toolbarbutton id="btnDetalle" />
+                    </listcell>
+                </listitem>
+						
+            </listbox>
+        </groupbox>
+        <toolbar id="tb" align="end" >
+            <toolbarbutton id="btnBuscar" image="/img/32/buscar.png" label="Buscar"   />
+            <toolbarbutton id="btnRegistrar" image="/img/32/registrar.png" label="Registrar" />
+            <toolbarbutton id="btnActualizar" image="/img/32/actualizar.png" label="Actualizar"   />
+            <toolbarbutton id="btnEliminar" image="/img/32/eliminar.png" label="Eliminar"   />
+            <toolbarbutton id="btnSalir" image="/img/32/salir.png" label="Salir" onClick="win.onClose()"  />
+        </toolbar>
+    </window>
+</zk>

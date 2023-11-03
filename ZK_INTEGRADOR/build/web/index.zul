@@ -1,0 +1,165 @@
+<zk >
+    <style>
+        .breeze .complex-layout, .breeze .complex-layout .z-south, .breeze .complex-layout .z-west {
+        background: #F7F7F7;
+        }
+        .complex-layout .z-north { background: #008BB6; }
+        .complex-layout .z-north > div { padding: 5px; }
+        img.complex-layout-header-img { padding: 0 10px; }
+        .complex-layout-header-label {
+        position: relative; top: -30px;
+        padding-left: 40px; font-size: 24px;
+        color: White; font-weight: bold;
+        }
+        .inner-border, .inner-border .z-north, .inner-border .z-west,
+        .inner-border .z-south, .inner-border .z-east { background: #FFFFFF; }
+        .dl-link { text-decoration: none; cursor: pointer; }
+    </style>
+    
+    <div >
+        <borderlayout id="winIndex" sclass="complex-layout" height="200px" apply="pe.integrador.Index">
+            <north size="150px" border="0">
+                <div>
+                    <image sclass="complex-layout-header-img"
+                           src="/img/128/mercado.png" />
+                    <label sclass="complex-layout-header-label"
+                           value="Minimarket" />
+                </div>
+            </north>
+            <!-- Sidebar -->
+            <west width="300px" border="0" flex="true" splittable="true" margins="0,5,0,0" >
+                <vlayout spacing="0">
+                    <panel width="100%" border="normal" title="Ventas">
+                        <panelchildren style="padding:5px;">
+                            <vbox>
+                                <toolbarbutton id="btnVenta" label="Registrar Venta" />
+                                
+                                <toolbarbutton id="btnInventario" label="Inventario" />
+                            </vbox>
+                        </panelchildren>
+                    </panel>
+                    <separator bar="true"/>
+                    <panel width="100%" border="normal" title="Compras">
+                        <panelchildren>
+                            <vbox>
+                                <toolbarbutton id="btnCompra" label="Registrar Compra" />
+                            </vbox>
+                        </panelchildren>
+                    </panel>
+                    <separator bar="true"/>
+                    <panel width="100%" border="normal" title="Listado">
+                        <panelchildren>
+                            <vbox>
+                                <toolbarbutton id="btnUsuarios" label="Listado Usuarios" />
+                                <toolbarbutton id="btnProductos" label="Listado Productos" />
+                                <toolbarbutton id="btnClientes" label="Listado Clientes" />
+                                <toolbarbutton id="btnProveedores" label="Listado Proveedores" />
+                                
+                            </vbox>
+                        </panelchildren>
+                    </panel>
+                    <separator bar="true"/>
+                    <!--                    <panel width="100%" border="normal" title="Features">
+                        <panelchildren>
+                            <html>
+                                <![CDATA[ <ul> <li>Server+client
+                                Fusion</li> <li>Ajax-as-a-Service</li>
+                                <li>The Event Queue</li> <li>jQuery
+                                Based</li> <li>SEO Friendly</li>
+                                <li>Auto Testing</li> </ul> ]]>
+                            </html>
+                        </panelchildren>
+                    </panel>-->
+                </vlayout>
+            </west>
+            <east width="130px" title="Quick Links" flex="true">
+                <vlayout>
+                   
+                    <vlayout style="text-align:center;">
+                        <a href="http://www.zkoss.org/download/zk/ce"
+                           sclass="dl-link" target="_zkdemo">
+                            <image src="/images/DownloadNow.jpg" />
+                        </a>
+                        <toolbarbutton label="Download"
+                                       href="http://www.zkoss.org/download/zk/ce" target="_zkdemo" />
+                    </vlayout>
+                </vlayout>
+            </east>
+            <!-- Content -->
+            <center >
+                <borderlayout sclass="inner-border">
+                    <!--                    <north border="0" height="4%" margins="2,3,0,0">
+                        <label value="HOME" style="font-size:20px;" />
+                    </north>-->
+                    <center border="0" margins="0,3,3,3">
+                        <panel title="Mantenimiento" border="normal" height="80%" >
+                            <panelchildren>
+                                <grid style="border:0;">
+                                    <rows>
+                                        <row>
+                                            <div>
+                                                <image src="/img/32/cliente.png" />
+                                                <separator orient="vertical" />
+                                                <toolbarbutton id="btnCliente" label="Cliente" />
+                                            </div>
+                                        </row>
+                                        <row>
+                                            <div>
+                                                <image src="/img/32/usuario.png" />
+                                                <separator orient="vertical" />
+                                                <toolbarbutton id="btnUsuario" label="Usuario" />
+                                            </div>
+                                        </row>
+                                        <row>
+                                            <div>
+                                                <image src="/img/32/proveedor.png" />
+                                                <separator orient="vertical" />
+                                                <toolbarbutton id="btnProveedor" label="Proveedor" />
+                                            </div>
+                                        </row>
+                                        <row>
+                                            <div>
+                                                <image src="/img/32/producto.png" />
+                                                <separator orient="vertical" />
+                                                <toolbarbutton id="btnProducto" label="Producto" />
+                                            </div>
+                                        </row>
+                                    </rows>
+                                </grid>
+                            </panelchildren>
+                        </panel>
+                    </center>
+<!--                    <east border="0" width="50%" margins="0,0,3,3">
+                        <panel title="Listado" border="normal"
+                               height="100%" hflex="1">
+                            <panelchildren>
+                                <grid height="100%" >
+                                    <rows>
+                                        <row>
+                                            <div>
+                                                <image src="/img/32/cliente.png" />
+                                                <separator orient="vertical" />
+                                                <toolbarbutton id="btnaCliente" label="Cliente" />
+                                            </div>
+                                        </row>
+                                        
+                                    </rows>
+                                </grid>
+                            </panelchildren>
+                        </panel>
+                    </east>-->
+                  
+                </borderlayout>
+            </center>
+            <south size="100px" border="0"
+                   style="background: none repeat scroll 0 0 ;">
+                <toolbar mold="panel" align="center">
+                   
+                    <toolbarbutton label="Print" />
+                    <separator orient="vertical" bar="true" />
+                    2023 © Powered by Flaven with ZK ${desktop.webApp.version} 
+                </toolbar>
+            </south>
+        </borderlayout>
+    </div>
+</zk>

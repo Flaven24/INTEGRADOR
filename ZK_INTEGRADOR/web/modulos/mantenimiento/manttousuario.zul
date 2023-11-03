@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="./winUsuario"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window id="winUsuario" title="Mantenimiento Usuario" width="500px" border="normal"
+            closable="true" apply="pe.integrador.modulos.mantenimiento.ManttoUsuario" >
+        <grid>
+            <columns>
+                <column width="20%" />
+                <column width="30%" />
+                <column width="20%" />
+                <column width="30%" />
+            </columns>
+            <rows>
+                <row >
+                    Nombre:
+                    <textbox id="txtNombre" width="80%" />
+                    <checkbox id="bActivo" label="Activo" />
+                </row >
+                <row >
+                    Usuario:
+                    <textbox id="txtUsuario" width="80%" />
+                    Contraseña:
+                    <textbox id="txtContrasena" width="80%" type="password"/>
+                </row>
+            </rows>
+        </grid>
+       
+        <toolbar id="tb" align="end" >
+            <toolbarbutton id="btnRegistrar" image="/img/32/registrar.png" label="Registrar" />
+            <toolbarbutton id="btnActualizar" image="/img/32/actualizar.png" label="Actualizar" visible="false" />
+            <toolbarbutton id="btnEliminar" image="/img/32/eliminar.png" label="Eliminar" visible="false"/>
+            <toolbarbutton id="btnSalir" image="/img/32/salir.png" label="Salir" onClick="winUsuario.onClose()"  />
+        </toolbar>
+    </window>
+</zk>

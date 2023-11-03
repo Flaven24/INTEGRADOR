@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="./winListado"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window id="winListado" title="Listado Proveedores" width="950px" border="normal" 
+            closable="true" apply="pe.integrador.modulos.listado.ListadoProveedores">
+        <grid>
+            <columns>
+                <column width="25%" />
+                <column width="25%" />
+                <column width="25%" />
+                <column width="25%" />
+            </columns>
+
+            <rows >
+                <row spans="1,3">
+                    <label value="Proveedor:"/>
+                    <textbox id="txtNombre" width="98%"/>
+                </row>
+            </rows>
+        </grid>
+        <groupbox >
+            <listbox id="lstProveedor" width="" height="" onSelect="" mold="paging" pageSize="15">
+                <listhead>
+                    <listheader label="Codigo" width="10%"/>
+                    <listheader label="Nombre" width="20%"/>
+                    <listheader label="Razon Social" width="30%"/>
+                    <listheader label="RUC" width="20%"/>
+                    <listheader label="Estado" width="20%"/>
+                </listhead>
+                <listitem self="@{each=item}">
+                    <listcell label="@{item.idproveedor}"/>
+                    <listcell label="@{item.cnombre}"/>
+                    <listcell label="@{item.crazon}"/>
+                    <listcell label="@{item.cruc}"/>
+                    <listcell label="@{item.idestado}"/>
+                </listitem>
+						
+            </listbox>
+        </groupbox>
+        <toolbar id="tb" align="end" >
+            <toolbarbutton id="btnBuscar" image="/img/32/buscar.png" label="Buscar"   />
+            <toolbarbutton id="btnImprimir" image="/img/32/pdf.png" label="Imprimir" />
+            <toolbarbutton id="btnSalir" image="/img/32/salir.png" label="Salir" onClick="winListado.onClose()"  />
+        </toolbar>
+    </window>
+</zk>

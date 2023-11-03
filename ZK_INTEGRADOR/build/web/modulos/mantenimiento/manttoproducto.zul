@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window id="winProducto" title="Mantenimiento Producto" width="600px" border="normal"
+            closable="true" apply="pe.integrador.modulos.mantenimiento.ManttoProducto" >
+        <grid>
+            <columns>
+                <column width="25%" />
+                <column width="25%" />
+                <column width="25%" />
+                <column width="25%" />
+                
+            </columns>
+            <rows>
+                <row spans="2,2">
+                    Codigo:
+                    <textbox id="txtCodigo"/>
+                </row>
+                <row spans="2,2">
+                    Nombre:
+                    <textbox id="txtNombre" width="98%" />
+                </row>
+                <row spans="1,1,2">
+                    <label >Stock:</label>
+                    <intbox id="nStock" width="50%" />
+                    <checkbox id="bActivo" label="Activo" />
+                </row>
+                <row >
+                    Costo promedio:
+                    <decimalbox id="nCosuni" width="60%" />
+                        
+                    Ultimo costo:
+                    <decimalbox id="nUltcos" width="60%" />
+                </row>
+                
+            </rows>
+        </grid>
+       
+        <toolbar id="tb" align="end" >
+            <toolbarbutton id="btnRegistrar" image="/img/32/registrar.png" label="Registrar" />
+            <toolbarbutton id="btnActualizar" image="/img/32/actualizar.png" label="Actualizar" visible="false" />
+            <toolbarbutton id="btnEliminar" image="/img/32/eliminar.png" label="Eliminar" visible="false" />
+            <toolbarbutton id="btnSalir" image="/img/32/salir.png" label="Salir" onClick="winProducto.onClose()"  />
+        </toolbar>
+    </window>
+</zk>

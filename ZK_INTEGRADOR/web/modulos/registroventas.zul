@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window id="winVentas" title="Registro Ventas" width="1200px" border="normal" closable="true" >
+        <grid>
+            
+            <rows>
+                <row spans="1,1,1,1,2,1">
+                    Fecha:
+                    <datebox id="dFecha"/>
+                    Cliente:
+                    <textbox id="txtCodCli" width="90%" />
+                    <textbox id="txtNomCli" width="90%" />
+                    <button id="btnCliente" label="..."/>
+                </row>
+                <row spans="1,2,3,1">
+                    Producto:
+                    <textbox id="txtCodProducto" width="90%"/>
+                    <textbox id="txtNomProducto" width="90%"/>
+                    <button id="btnProducto" label="..."/>
+                </row>
+                <row spans="1,1,1,1">
+                    Cantidad:
+                    <intbox id="nCantidad" width="90%" />
+                    Precio Venta:
+                    <decimalbox id="nPrecio" width="90%" />
+                </row>
+            </rows>
+        </grid>
+        <groupbox >
+            <listbox id="lstVenta" width="" height="" onSelect="">
+                <listhead>
+                    <listheader label="Producto"/>
+                    <listheader label="Cantidad"/>
+                    <listheader label="Precio"/>
+                    <listheader label="Subtotal"/>
+                </listhead>
+                <listitem>
+                    <listcell label=""/>
+                    <listcell label=""/>
+                    <listcell label=""/>
+                    <listcell label=""/>
+                </listitem>
+                <listfoot>
+                    <listfooter/>
+                    <listfooter/>
+                    <listfooter/>
+                    <listfooter>
+                        <decimalbox id="nSubtotal" readonly="true" width="80%" format="0.00"/>
+                    </listfooter>
+                    
+                </listfoot>
+						
+            </listbox>
+        </groupbox>
+        <toolbar id="tb" align="end" >
+            <toolbarbutton id="btnBuscar" image="/img/32/buscar.png" label="Buscar"   />
+            <toolbarbutton id="btnRegistrar" image="/img/32/registrar.png" label="Registrar" />
+            <toolbarbutton id="btnActualizar" image="/img/32/actualizar.png" label="Actualizar"   />
+            <toolbarbutton id="btnEliminar" image="/img/32/eliminar.png" label="Eliminar"   />
+            <toolbarbutton id="btnSalir" image="/img/32/salir.png" label="Salir" onClick="winVentas.onClose()"  />
+        </toolbar>
+    </window>
+</zk>

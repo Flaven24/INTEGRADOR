@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="listadousuarios" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="77666483-8c8d-40af-bedc-fd5119aeb47e">
+	<property name="ireport.zoom" value="1.9487171000000014"/>
+	<property name="ireport.x" value="196"/>
+	<property name="ireport.y" value="190"/>
+	<field name="cnombre" class="java.lang.String"/>
+	<field name="clogin" class="java.lang.String"/>
+	<field name="bactivo" class="java.lang.Boolean"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="180" y="28" width="202" height="28" uuid="c496fe68-26d5-4939-b402-fd95f0e785f8"/>
+				<textElement>
+					<font fontName="Century" size="16"/>
+				</textElement>
+				<text><![CDATA[LISTADO USUARIOS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="49" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="24" splitType="Stretch">
+			<rectangle>
+				<reportElement x="110" y="0" width="302" height="24" forecolor="#006666" backcolor="#006666" uuid="2acc4ab2-5d67-4250-a87c-0c8802370004"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="110" y="0" width="100" height="24" uuid="3d5cc9c1-95d6-4029-a87b-56d24840a6b0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="212" y="0" width="100" height="24" uuid="76ec37af-c7cd-4c9b-9d63-a9607285599e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[USUARIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="314" y="0" width="100" height="24" uuid="8b8c0d46-e4a9-4663-8ed6-1aab6c87a6c7"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ACTIVO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="110" y="0" width="302" height="20" uuid="e713e467-ef6c-4553-931a-ceae8447bff7"/>
+			</rectangle>
+			<textField>
+				<reportElement x="112" y="0" width="100" height="20" uuid="93ebae10-1715-4147-9c2d-4491c331e50b"/>
+				<textFieldExpression><![CDATA[$F{cnombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="0" width="100" height="20" uuid="a051463b-eb4f-4703-837f-7cf61b398daa"/>
+				<textFieldExpression><![CDATA[$F{clogin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="312" y="0" width="100" height="20" uuid="b882fef8-8669-49a4-ad05-f6ec52c634c9"/>
+				<textFieldExpression><![CDATA[$F{bactivo}?"X":""]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

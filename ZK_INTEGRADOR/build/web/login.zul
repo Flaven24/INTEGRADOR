@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<zk xmlns="http://www.zkoss.org/2005/zul">  
+    <window id="winIndex" title="SISTEMA PARA MINIMARKET" apply="pe.integrador.Login" mode="modal" border="normal" width="400px">
+      
+        <grid>
+            <columns>
+                <column width="50%"/>
+                <column width="50%"/>
+            </columns>
+            <rows>
+                <row spans="2">
+                    <image id="" src="/img/128/mercado.png" style="display: block;margin-left: auto;margin-right: auto;width: 20%;" height=""/>
+                </row>
+                
+                <row>
+                    <label value="Usuario:"/>
+                    <textbox id="txtUsuario" width="80%"/>
+                </row>
+                <row> 
+                    <label value="Contraseña:"/>
+                    <textbox id="txtContrasena" width="80%" type="password"/>
+                </row>
+                <row>
+                    <button id="btnInicio" label="Iniciar Sesion" onClick=""></button>
+                    <button id="btnCancelar" label="Cancelar" onClick=""></button>
+                </row>
+            </rows>
+        </grid>
+        
+    
+    </window>
+</zk>
